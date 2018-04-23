@@ -1,0 +1,243 @@
+\documentclass[12px]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+%Pour avoir un joli D belle majuscule.
+\usepackage{fourier}
+%
+\usepackage{amsfonts,amsmath,amssymb}
+
+%Quelques raccourcis utiles (pour les démos du chapitre Intégration)
+\newcommand\I{$[a\,;b]$ }
+\newcommand\xo{x_{0} }
+\newcommand\dt{f(t)\,\,\mathrm{dt}}
+
+\begin{document}
+	\begin{center}
+		\fbox{\Huge{L'intégral des démos bac}}
+	\end{center}
+	
+	%====================LIMITES DE SUITES=====================
+	%====================1ère Démo du chapitre Limite de suite=====================
+	\section{Suite croissante convergente}
+	
+	\subsection{\'Enoncé}
+	Soit ($u_n$) une suite croissante qui converge vers une limite finie $l$.\\
+	Alors $\forall_n\in\mathbb{N}, \,u_n\leq l$.
+	
+	\subsection{Démonstration}
+	Raisonnons par l'absurde:\\
+	Supposons que: $\exists_{n_0}\in\mathbb{N}, \,u_{n_0}>l$.\\
+	Alors, comme la suite $u_n$ est croissante: $\forall_n\geq n_{0}, \,u_n\geq u_{n_0}>l$.\\
+	L'intervalle ouvert $]l-1; \,u_{n_{0}}[$ contient $l$, mais ne peut contenir les $u_n$ que pour $n<n_0$, donc il ne peut pas contenir tous les termes de la suite à partir d'un certain rang.\\
+	Cela contredit le fait que $\lim\limits_{n\rightarrow +\infty}u_n =l$.\\
+	Donc $\forall_n\in\mathbb{N}, \,u_n\leq l$.
+	
+	%====================2ème Démo du chapitre Limite de suite=====================
+	\section{Suite croissante non majorée}
+	
+	\subsection{\'Enoncé}
+	Une suite croissante non majorée a pour limite $+\infty$.
+	
+	\subsection{Démonstration}
+	Soit ($u_0$) une suite croissante non majorée.\\
+	Soit $A$ un réel quelconque.\\
+	Comme la suite n'est pas majorée par A, $\exists_N\in\mathbb{N}, \,u_{N}>A$\\
+	Comme la suite est croissante, $\forall_n\geq N, \,u_n\geq u_{N}>A$.\\
+	Tous les termes de la suite sont donc dans l'intervalle $]A;\,+\infty[$ à partir d'un certain rang $N$.\\
+	Donc $\forall_A\in\mathbb{R}, \,\exists_N\in\mathbb{N}, \,\forall_n\geq N, \,u_n >A \Leftrightarrow \lim\limits_{n\rightarrow +\infty}u_n =+\infty$.
+	
+	%====================3ème Démo du chapitre Limite de suite=====================
+	%\newpage
+	\section{Limites des suites géométriques}
+	
+	\subsection{\'Enoncé}
+	$q>1 \Rightarrow \lim\limits_{n\rightarrow +\infty}q^n = +\infty$.
+	
+	\subsection{Démonstration}
+	Soit $q>1$.\\
+	Alors $\exists_a\in\mathbb{R}_+^*, \,q=1+a$.\\
+	\\
+	Soit $\forall_n\in\mathbb{N}, \,P_n:"q^n\geq 1+na"$.\\
+	\textsc{Initialisation:}\\
+	Pour $n=0$, $q^0=1$ et $1+0\times a=1$, donc $q^0\geq 1+0\times a$. La récurrence est donc initialisée.\\
+	\textsc{Hérédité:}\\
+	Supposons que pour un certain $n$ quelconque de $\mathbb{N}$, $P_n$ soit vraie. Montrons que $P_{n+1}$ est vraie.\\
+	HR: $q^n \geq 1+na$\\
+	Mq: $q^{n+1} \geq 1+a(n+1)$\\
+	On a: $q^{n+1}=q\times q^n =q^n(1+a)$\\
+	Or, par HR, $q^n \geq 1+na$\\
+	Donc $q^{n+1} \geq (1+a)(1+na) = 1+na+a+na^2 = 1+a(n+1)+na^2$\\
+	Or, comme $n\geq 0$ et $a^2>0$, $na^2\geq 0$\\
+	Donc $q^{n+1}\geq 1+a(n+1)$\\
+	\textsc{Conclusion:}\\
+	$P_0$ est vraie, $\forall_n\in\mathbb{N},P_n\Rightarrow P_{n+1}$, donc d'après le principe de récurrence, $\forall_n\in\mathbb{N}, q^n\geq 1+na$.\\
+	\\
+	Comme $a>0, \lim\limits_{n\rightarrow +\infty}(1+na)= +\infty$.\\
+	Donc d'après le théorème de comparaison,$ \lim\limits_{n\rightarrow +\infty}q^n=+\infty$.
+	
+	%====================EXPONENTIELLE=====================
+	%====================1ère Démo du chapitre Exp=====================
+	\section{Prérequis (Fonction exponentielle)}
+	Soit $f$ une fonction dérivable sur un intervalle $I$.\\
+	Si $\forall_x\in I, \,f'(x)=0,$ alors $f$ est constante sur $I$.\\
+	
+	\section{1ère Démo (Fonction exponentielle)}
+		
+	\subsection{\'Enoncé}
+	Soit f la fonction dérivable sur $\mathbb{R}$ telle que $f'=f$ et $f(0)=1$.\\
+	Alors, $\forall_x\in\mathbb{R}, f(x)\times f(-x)=1$ et $f(x)\not= 0$.
+		
+	\subsection{Démonstration}
+	Soit $g$ la fonction définie sur $\mathbb{R}$ par $g(x)=f(x)\times f(-x)$.\\
+	Comme $f$ est dérivable sur $\mathbb{R}$, il en est de même de la fonction $u:x\rightarrow f(-x)$ et, pour $x\in\mathbb{R}$, $u'(x)=-f'(x)$.\\
+	Donc $g$ est dérivable sur $\mathbb{R}$ et, pour tout $x\in\mathbb{R}$:
+	\begin{align*}
+		g'(x)=&f'(x)\times u(x) + f(x)\times u'(x)\\
+			 =&f'(x)\times f(-x) - f(x)\times f(-x)\\
+			 =&f(x)\times f(-x) - f(x)\times f(-x)\quad :\, f'=f\\
+			 =&0
+	\end{align*}
+	Donc g est constante sur $\mathbb{R}$.\\
+	Par ailleurs, $g(0)=f(0)f(-0)=(f(0))^2=1$.\\
+	Donc $\forall_x\in \mathbb{R}, g(x)=1 \Leftrightarrow f(x)\times f(-x)=1$.\\
+	\\
+	De plus, si $\exists_{x_0}\in\mathbb{R}, f(x_0)=0$, alors $f(x_0)\times f(-x_0)=0$, ce qui contredit le résultat précédent.\\
+	Donc $\forall_x\in\mathbb{R}, f(x)\not=0$.
+	
+	
+	%====================2ème Démo du chapitre Exp=====================
+	\newpage
+	\section{Unicité de la fonction exponentielle}
+	
+	\subsection{\'Enoncé}
+	Il existe une unique fonction $f$ définie sur $\mathbb{R}$ telle que $f'=f$ et $f(0)=1$.\\
+	Cette fonction s'appelle la \textbf{fonction exponentielle}, et on la note \emph{exp}.
+	
+	\subsection{Démonstration}
+	\textsc{\'Existence:}\\
+	L'existence de la fonction exponentielle est admise.\\
+	\textsc{Unicité:}\\
+	Soit $g$ une autre fonction définie et dérivable sur sur $\mathbb{R}$ telle que $g'=g$ et $g(0)=1$.\\
+	D'après la propriété précédente, $\forall_x\in\mathbb{R}, f(x)\not=0$, on peut donc définir la fonction:
+	\begin{displaymath}
+		h(x)=\frac{g(x)}{f(x)}
+	\end{displaymath}
+	Montrons que $\forall_x\in\mathbb{R}, h(x)=1$.\\
+	La fonction $h$ est dérivable sur $\mathbb{R}$, donc $\forall_x\in\mathbb{R}$:\\
+	\begin{align*}
+		h'(x)=&\frac{ g'(x)\times f(x) - g(x)\times f'(x) } { (f(x))^2 }\\
+			 =&\frac{ g(x)\times f(x) - g(x)\times f(x) } { (f(x))^2 } \quad :f'=f;\; g'=g\\
+			 =&0
+	\end{align*}
+	Donc $h$ est constante sur $\mathbb{R}$.\\
+	De plus, $h(0)=\frac{g(0)}{f(0)}=1$.\\
+	Donc $\forall_x\in\mathbb{R}, \,h(x)=1 \Leftrightarrow \frac{g(x)}{f(x)}=1 \Leftrightarrow g(x)= f(x)$.\\
+	Donc $f=g$.
+	
+	%===================INTEGRATION=====================
+	%===================1ère Démo du chapitre Intégration====================
+	\section{1ère Démo (Intégration)}
+	
+	\subsection{\'Enoncé}
+	Soit $f$ une fonction continue et positive sur un intervalle \I.\\
+	Alors la fonction $F$ définie sur \I par :
+	\begin{center}
+		\begin{displaymath}
+			F(x) = \int_{a}^{x}f(t)\,\mathrm{dt}
+		\end{displaymath}
+	\end{center}
+	est dérivable sur \I et, pour tout $x$ de [a;b], $F'(x)=f(x)$.\\
+	Plus précisément, $F$ est la primitive de $f$ sur $[a;b]$ qui s'annule en $a$.
+	
+	\subsection{Démonstration}
+	\emph{Conformément au programme de TS, on montre ce théorème uniquement lorsque $f$ est croissante sur \I}.\\
+	
+	Soit $f$ une fonction continue, positive et croissante sur \I.
+	Soit $\xo \in$ \I et $h>0$ tq $\xo+h \in [a;b]$.\\
+	
+	\emph{Idée: On va encadrer $\frac{F( \xo +h) - F(\xo) }{h}$ pour calculer sa limite quand $h \rightarrow 0$}\\
+		
+	On a, d'après la relation de Chasles:\\
+	\begin{displaymath}
+		F( \xo +h ) - F(\xo) = \int_{a}^{\xo +h}\dt - \int_{a}^{\xo}\dt = 
+		\int_{a}^{ \xo +h }\dt + \int_{\xo}^{a}\dt = \int_{\xo}^{\xo +h}\dt
+	\end{displaymath}
+	\\
+		
+	\emph
+	{
+	Remarque: Comme $f$ est croissante sur \I, le domaine $\mathcal{D}$ est compris entre les rectangles de base $[\xo; \xo +h]$ et de hauteurs $f(\xo)$ et $f(\xo +h)$, ce qui va nous permettre d'encadrer $\int_{\xo}^{\xo +h}\dt$.
+	}
+	
+	Comme f est croissante sur \I, on a l'encadrement:
+	\begin{center}
+		\begin{displaymath}
+			%Rappel: \leq = <=
+			(\xo +h -\xo ) \times f(\xo) 
+				\leq 
+			\int_{\xo}^{\xo +h}\dt 
+				\leq 
+			(\xo +h -\xo) \times f(\xo +h)
+		\end{displaymath}
+	\end{center}
+	C'est à dire:
+	\begin{center}
+		\begin{displaymath}
+			%Rappel: \leq = <=
+			h \times f(\xo) 
+			\leq 
+			\int_{\xo}^{\xo +h}\dt 
+			\leq 
+			h \times f(\xo +h)
+		\end{displaymath}
+	\end{center}
+	D'où, en divisant pas $h>0$:
+	\begin{center}
+		\begin{displaymath}
+			%Rappel: \leq = <=
+			f(\xo) \leq \frac{\int_{\xo}^{\xo +h}\dt}{h} \leq f(\xo +h)
+		\end{displaymath}
+	\end{center}
+	Soit encore, puisque $F(\xo +h) - F(\xo) = \int_{\xo}^{\xo +h}\dt$:
+	\begin{center}
+		\begin{displaymath}
+			%Rappel: \leq = <=
+			f(\xo) \leq \frac{F(\xo +h) - F(\xo)}{h} \leq f(\xo +h)
+		\end{displaymath}
+	\end{center}
+	En procédant de même pour $h<0$, on obtient:
+	$f(\xo +h) \leq \frac{F(\xo +h) - F(\xo)}{h} \leq f(\xo)$.\\
+	Comme f est continue sur \I, on a donc en $\xo$ 
+	$\lim\limits_{h \rightarrow 0} f(\xo +h) = f(\xo)$.\\
+	Donc d'après le théorème des gendarmes, 
+	$\lim\limits_{h \rightarrow 0}\frac{F(\xo +h) - F(\xo)}{h} = f(\xo)$.
+	Donc F est dérivable sur $\xo$ avec $F'(\xo) = f(\xo)$.\\
+	Ceci étant vrai pour tout $\xo$ de \I, F est dérivable sur \I et $F'=f$.
+	
+	
+	%===================2ème Démo du chapitre Intégration====================
+	\section{2ème Démo (Intégration)}
+	
+	\subsection{\'Enoncé}
+	Toute fonction continue sur un intervalle admet des primitives sur cet intervalle.
+	
+	\subsection{Démonstration}
+	On se place dans le cas où $f$ est définie sur l'intervalle \textbf{fermé} \I.\\
+	On admet que, dans ce cas, $f$ admet un minimum $m$ sur \I.\\
+	La fonction $g:x\mapsto f(x)-m$ est alors continue et positive sur \I.\\
+	Elle admet donc une primitive $G$ sur \I : $\forall_{x} \in \I, \, G'(x) = f(x) -m$.\\
+	Soit $\forall_{x} \in \I, \, F: x \mapsto G(x) + mx$.\\
+	Alors $F$ est dérivable sur \I et, pour tout $x \in \I$:
+	\begin{center}
+		\begin{displaymath}
+			F'(x) = G'(x) + m = g(x) - m = f(x) -m +m = f(x)
+		\end{displaymath}
+	\end{center}
+	Ainsi, $f$ admet $F$ pour primitive sur \I.
+	
+\end{document}
+
+
+
+
