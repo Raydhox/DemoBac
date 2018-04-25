@@ -10,7 +10,7 @@
 %Quelques raccourcis utiles (pour les démos du chapitre Intégration)
 \newcommand\I{$[a\,;b]$ }
 \newcommand\xo{x_{0} }
-\newcommand\dt{f(t)\,\,\mathrm{dt}}
+\newcommand\dt{f(t)\;\mathrm{dt}}
 
 \begin{document}
 	\begin{center}
@@ -279,13 +279,66 @@
 	$A$ et $\bar{A}$ forment un système d'événements complet, donc d'après la formule des probabilités totales:\\
 	$P(B)= P(A\cap B) + P(\bar{A} \cap B)$\\
 	D'où:
-	\begin{align}
+	\begin{align*}
 	P(\bar{A}\cap B) &= P(B) - P(A\cap B)\\
 	&= P(B) - P(A)\times P(B)\\
 	&= P(B)\times (1-P(A))\\
 	&= P(\bar{A})\times P(B)
-	\end{align}
+	\end{align*}
 	Donc $A$ et $B$ sont indépendants.
+	
+	%===================LOI CONTINUE=====================
+	%===================Loi Exponentielle====================
+	\section{La loi exponentielle est une loi sans mémoire}
+	
+	\subsection{\'Enoncé}
+	$X\rightsquigarrow\mathcal{E}(\lambda) \Rightarrow \forall_{(t,h)}\in\mathbb{R}_+^2,
+	\,P_{X\geq t}(X\geq t+h) = P(X\geq h)$
+	
+	\subsection{Démonstration}
+	\begin{align*}
+	P_{X\geq t}(X\geq t+h) &= \frac{P(X\geq t\wedge X\geq t+h)}{P(X\geq t)}\\
+	&= \frac{P(X\geq t+h)}{P(X\geq t)}\\
+	&= \frac{ e^{-\lambda (t+h)} }{ e^{-\lambda t} }\\
+	&= \frac{ e^{-\lambda t}\times e^{-\lambda h} }{ e^{-\lambda t} }\\
+	&= e^{-\lambda h}\\
+	&= P(X\geq h)
+	\end{align*}
+	
+	%===================Loi Normale====================
+	\section{Unicité de $u_\alpha$}
+	
+	\subsection{Loi normale centrée réduite}
+	\begin{displaymath}
+		\forall_t\in\mathbb{R},\, \phi (t) = \frac{1}{2\pi}\times e^{ -\frac{t^2}{2} }
+	\end{displaymath}
+	
+	\subsection{\'Enoncé}
+	$(T\rightsquigarrow\mathcal{N}(0;\, 1) \wedge \alpha\in ]0;\, 1[)
+	\Rightarrow \exists !_{u_\alpha}\in\mathbb{R}^+,
+	\,P(-u_\alpha\leq T\leq u_\alpha) = 1 - \alpha$
+	
+	\subsection{Démonstration}
+	Soit $\forall_u\in [0; \, +\infty[,\; F(u) = P(-u\leq T\leq u) = 1-\alpha$.\\
+	On a: $F(0)=0$ et $\lim\limits_{u\rightarrow +\infty}F(u)=1$ : l'aire sous la cloche vaut 1.\\
+	Par ailleurs, par symétrie de $\phi$ par rapport à l'axe des ordonnées, on a:\\
+	$F(u) =\, 2\times P(0\leq T\leq u) =\, \int_{0}^{u}\phi (t)\; \mathrm{dt}$\ \  \emph{(avec $\int_{0}^{u}\phi (t)\; \mathrm{dt}$ la primitive de $\phi$ qui s'annule en 0)}.\\
+	Donc $F'(u) = 2\times \phi (u) >0$ et par suite, $F$ est strictement croissante sur $[0; +\infty[$.\\
+	Donc d'après le théorème des valeurs intermédiaires, comme $(1-\alpha)\in ]0;\; 1[,\; \exists !_{u_\alpha}\in\mathbb{R},\, F(u_\alpha) = 1-\alpha$,\\
+	c'est à dire telle que:
+	\begin{displaymath}
+		P(-u_\alpha\leq T \leq u_\alpha) = 1-\alpha
+	\end{displaymath}
+	
+	%===================\'ECHANTILLONAGE=====================
+	%===================Intervalle de fluctuation avec une loi normale====================
+	\section{Intervalle de fluctuation avec une loi normale}
+	
+	\subsection{\'Enoncé}
+	
+	
+	\subsection{Démonstration}
+	
 	
 \end{document}
 
