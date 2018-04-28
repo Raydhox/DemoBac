@@ -22,15 +22,15 @@
 	
 	\subsection{\'Enoncé}
 	Soit ($u_n$) une suite croissante qui converge vers une limite finie $l$.\\
-	Alors $\forall_n\in\mathbb{N}, \,u_n\leq l$.
+	Alors $\forall n\in\mathbb{N}, \,u_n\leq l$.
 	
 	\subsection{Démonstration}
 	Raisonnons par l'absurde:\\
-	Supposons que: $\exists_{n_0}\in\mathbb{N}, \,u_{n_0}>l$.\\
-	Alors, comme la suite $u_n$ est croissante: $\forall_n\geq n_{0}, \,u_n\geq u_{n_0}>l$.\\
+	Supposons que: $\exists n_0 \in\mathbb{N}, \,u_{n_0}>l$.\\
+	Alors, comme la suite $u_n$ est croissante: $\forall n\geq n_{0}, \,u_n\geq u_{n_0}>l$.\\
 	L'intervalle ouvert $]l-1; \,u_{n_{0}}[$ contient $l$, mais ne peut contenir les $u_n$ que pour $n<n_0$, donc il ne peut pas contenir tous les termes de la suite à partir d'un certain rang.\\
 	Cela contredit le fait que $\lim\limits_{n\rightarrow +\infty}u_n =l$.\\
-	Donc $\forall_n\in\mathbb{N}, \,u_n\leq l$.
+	Donc $\forall n\in\mathbb{N}, \,u_n\leq l$.
 	
 	%====================2ème Démo du chapitre Limite de suite=====================
 	\section{Suite croissante non majorée}
@@ -41,10 +41,10 @@
 	\subsection{Démonstration}
 	Soit ($u_n$) une suite croissante non majorée.\\
 	Soit $A$ un réel quelconque.\\
-	Comme la suite n'est pas majorée par A, $\exists_N\in\mathbb{N}, \,u_{N}>A$\\
-	Comme la suite est croissante, $\forall_n\geq N, \,u_n\geq u_{N}>A$.\\
+	Comme la suite n'est pas majorée par A, $\exists N\in\mathbb{N}, \,u_{N}>A$\\
+	Comme la suite est croissante, $\forall n\geq N, \,u_n\geq u_{N}>A$.\\
 	Tous les termes de la suite sont donc dans l'intervalle $]A;\,+\infty[$ à partir d'un certain rang $N$.\\
-	Donc $\forall_A\in\mathbb{R}, \,\exists_N\in\mathbb{N}, \,\forall_n\geq N, \,u_n >A \Leftrightarrow \lim\limits_{n\rightarrow +\infty}u_n =+\infty$.
+	Donc $\forall A\in\mathbb{R}, \,\exists N\in\mathbb{N}, \,\forall n\geq N, \,u_n >A \Leftrightarrow \lim\limits_{n\rightarrow +\infty}u_n =+\infty$.
 	
 	%====================3ème Démo du chapitre Limite de suite=====================
 	%\newpage
@@ -55,9 +55,9 @@
 	
 	\subsection{Démonstration}
 	Soit $q>1$.\\
-	Alors $\exists_a\in\mathbb{R}_+^*, \,q=1+a$.\\
+	Alors $\exists a\in\mathbb{R}_+^*, \,q=1+a$.\\
 	\\
-	Soit $\forall_n\in\mathbb{N}, \,P_n:"q^n\geq 1+na"$.\\
+	Soit $\forall n\in\mathbb{N}, \,P_n:"q^n\geq 1+na"$.\\
 	\textsc{Initialisation:}\\
 	Pour $n=0$, $q^0=1$ et $1+0\times a=1$, donc $q^0\geq 1+0\times a$. La récurrence est donc initialisée.\\
 	\textsc{Hérédité:}\\
@@ -71,7 +71,7 @@
 	Donc $q^{n+1}\geq 1+a(n+1)$\\
 	La propriété est donc héréditaire.\\
 	\textsc{Conclusion:}\\
-	$P_0$ est vraie, $\forall_n\in\mathbb{N},P_n\Rightarrow P_{n+1}$, donc d'après le principe de récurrence, $\forall_n\in\mathbb{N}, q^n\geq 1+na$.\\
+	$P_0$ est vraie, $\forall n\in\mathbb{N},P_n\Rightarrow P_{n+1}$, donc d'après le principe de récurrence, $\forall n\in\mathbb{N}, q^n\geq 1+na$.\\
 	\\
 	$a>0 \Rightarrow \lim\limits_{n\rightarrow +\infty}(1+na)= +\infty$.\\
 	Donc d'après le théorème de comparaison,$ \lim\limits_{n\rightarrow +\infty}q^n=+\infty$.
@@ -80,13 +80,13 @@
 	%====================1ère Démo du chapitre Exp=====================
 	\section{Prérequis (Fonction exponentielle)}
 	Soit $f$ une fonction dérivable sur un intervalle $I$.\\
-	Si $\forall_x\in I, \,f'(x)=0,$ alors $f$ est constante sur $I$.
+	Si $\forall x\in I, \,f'(x)=0,$ alors $f$ est constante sur $I$.
 	
 	\section{1ère Démo (Fonction exponentielle)}
 		
 	\subsection{\'Enoncé}
 	Soit f la fonction dérivable sur $\mathbb{R}$ telle que $f'=f$ et $f(0)=1$.\\
-	Alors, $\forall_x\in\mathbb{R}, f(x)\times f(-x)=1$ et $f(x)\not= 0$.
+	Alors, $\forall x\in\mathbb{R}, f(x)\times f(-x)=1$ et $f(x)\not= 0$.
 		
 	\subsection{Démonstration}
 	Soit $g$ la fonction définie sur $\mathbb{R}$ par $g(x)=f(x)\times f(-x)$.\\
@@ -100,10 +100,10 @@
 	\end{align*}
 	Donc g est constante sur $\mathbb{R}$.\\
 	Par ailleurs, $g(0)=f(0)f(-0)=(f(0))^2=1$.\\
-	Donc $\forall_x\in \mathbb{R}, g(x)=1 \Leftrightarrow f(x)\times f(-x)=1$.\\
+	Donc $\forall x\in \mathbb{R}, g(x)=1 \Leftrightarrow f(x)\times f(-x)=1$.\\
 	\\
-	De plus, si $\exists_{x_0}\in\mathbb{R}, f(x_0)=0$, alors $f(x_0)\times f(-x_0)=0$, ce qui contredit le résultat précédent.\\
-	Donc $\forall_x\in\mathbb{R}, f(x)\not=0$.
+	De plus, si $\exists x_0\in\mathbb{R}, f(x_0)=0$, alors $f(x_0)\times f(-x_0)=0$, ce qui contredit le résultat précédent.\\
+	Donc $\forall x\in\mathbb{R}, f(x)\not=0$.
 	
 	
 	%====================2ème Démo du chapitre Exp=====================
@@ -119,12 +119,12 @@
 	L'existence de la fonction exponentielle est admise.\\
 	\textsc{Unicité:}\\
 	Soit $g$ une autre fonction définie et dérivable sur sur $\mathbb{R}$ telle que $g'=g$ et $g(0)=1$.\\
-	D'après la propriété précédente, $\forall_x\in\mathbb{R}, f(x)\not=0$, on peut donc définir la fonction:
+	D'après la propriété précédente, $\forall x\in\mathbb{R}, f(x)\not=0$, on peut donc définir la fonction:
 	\begin{displaymath}
 		h(x)=\frac{g(x)}{f(x)}
 	\end{displaymath}
-	Montrons que $\forall_x\in\mathbb{R}, h(x)=1$.\\
-	La fonction $h$ est dérivable sur $\mathbb{R}$, donc $\forall_x\in\mathbb{R}$:\\
+	Montrons que $\forall x\in\mathbb{R}, h(x)=1$.\\
+	La fonction $h$ est dérivable sur $\mathbb{R}$, donc $\forall x\in\mathbb{R}$:\\
 	\begin{align*}
 		h'(x)=&\frac{ g'(x)\times f(x) - g(x)\times f'(x) } { (f(x))^2 }\\
 			 =&\frac{ g(x)\times f(x) - g(x)\times f(x) } { (f(x))^2 } \quad :f'=f;\; g'=g\\
@@ -132,7 +132,7 @@
 	\end{align*}
 	Donc $h$ est constante sur $\mathbb{R}$.\\
 	De plus, $h(0)=\frac{g(0)}{f(0)}=1$.\\
-	Donc $\forall_x\in\mathbb{R}, \,h(x)=1 \Leftrightarrow \frac{g(x)}{f(x)}=1 \Leftrightarrow g(x)= f(x)$.\\
+	Donc $\forall x\in\mathbb{R}, \,h(x)=1 \Leftrightarrow \frac{g(x)}{f(x)}=1 \Leftrightarrow g(x)= f(x)$.\\
 	Donc $f=g$.
 	
 	%====================3ème Démo du chapitre Exp=====================
@@ -146,18 +146,18 @@
 	
 	\subsection{Démonstration}
 	\textsc{Limite en $+\infty$}\\
-	Montrons que: $\forall_x\in\mathbb{R}^+, e^x >x$.\\
-	Soit $\forall_x\in\mathbb{R}^+, f(x)=e^x -x$.\\
-	$f$ est dérivable sur $[0; +\infty[$ et $\forall_x\in\mathbb{R}^+, \,f'(x)=e^x -1$.\\
-	$\forall_x\geq 0, \,e^x >1 \Rightarrow f'(x)\geq 0$\\
+	Montrons que: $\forall x\in\mathbb{R}^+, e^x >x$.\\
+	Soit $\forall x\in\mathbb{R}^+, f(x)=e^x -x$.\\
+	$f$ est dérivable sur $[0; +\infty[$ et $\forall x\in\mathbb{R}^+, \,f'(x)=e^x -1$.\\
+	$\forall x\geq 0, \,e^x >1 \Rightarrow f'(x)\geq 0$\\
 	Donc $f$ est croissante sur $[0;\, +\infty[$ et comme $f(0)= e^0= 1$,\\
-	$\forall_x\geq 0, \,f(x)\geq 1\Rightarrow f(x)>0 \Leftrightarrow e^x > x$\\
+	$\forall x\geq 0, \,f(x)\geq 1\Rightarrow f(x)>0 \Leftrightarrow e^x > x$\\
 	\\
 	Comme $\lim\limits_{x \rightarrow +\infty}x=+\infty$, on a, par comparaison, $\lim\limits_{x\rightarrow +\infty}e^x=+\infty$\\
 	\newpage
 	\textsc{Limite en $-\infty$}
 	\begin{displaymath}
-		\forall_x\in\mathbb{R}, e^x = \frac{1}{e^{-x}}
+		\forall x\in\mathbb{R}, e^x = \frac{1}{e^{-x}}
 	\end{displaymath}
 	D'où:\\
 	\begin{displaymath}
@@ -176,7 +176,7 @@
 			F(x) = \int_{a}^{x}f(t)\,\mathrm{dt}
 		\end{displaymath}
 	\end{center}
-	est dérivable sur \I et $\forall_x\in [a;\, b],\, F'(x)=f(x)$.\\
+	est dérivable sur \I et $\forall x\in [a;\, b],\, F'(x)=f(x)$.\\
 	Plus précisément, $F$ est la primitive de $f$ sur $[a;b]$ qui s'annule en $a$.
 	
 	\subsection{Démonstration}
@@ -252,8 +252,8 @@
 	On se place dans le cas où $f$ est définie sur l'intervalle \textbf{fermé} \I.\\
 	On admet que, dans ce cas, $f$ admet un minimum $m$ sur \I.\\
 	La fonction $g:x\mapsto f(x)-m$ est alors continue et positive sur \I.\\
-	Elle admet donc une primitive $G$ sur \I : $\forall_{x} \in \I, \, G'(x) = f(x) -m$.\\
-	Soit $\forall_{x} \in \I, \, F: x \mapsto G(x) + mx$.\\
+	Elle admet donc une primitive $G$ sur \I : $\forall x \in \I, \, G'(x) = f(x) -m$.\\
+	Soit $\forall x \in \I, \, F: x \mapsto G(x) + mx$.\\
 	Alors $F$ est dérivable sur \I et, pour tout $x \in \I$:
 	\begin{center}
 		\begin{displaymath}
@@ -291,7 +291,7 @@
 	\section{La loi exponentielle est une loi sans mémoire}
 	
 	\subsection{\'Enoncé}
-	$X\rightsquigarrow\mathcal{E}(\lambda) \Rightarrow \forall_{(t;\, h)}\in\mathbb{R}_+^2,
+	$X\rightsquigarrow\mathcal{E}(\lambda) \Rightarrow \forall (t;\, h)\in\mathbb{R}_+^2,
 	\,P_{X\geq t}(X\geq t+h) = P(X\geq h)$
 	
 	\subsection{Démonstration}
@@ -309,21 +309,21 @@
 	
 	\subsection{Loi normale centrée réduite}
 	\begin{displaymath}
-		\forall_t\in\mathbb{R},\, \phi (t) = \frac{1}{2\pi}\times e^{ -\frac{t^2}{2} }
+		\forall t\in\mathbb{R},\, \phi (t) = \frac{1}{2\pi}\times e^{ -\frac{t^2}{2} }
 	\end{displaymath}
 	
 	\subsection{\'Enoncé}
 	$T\rightsquigarrow\mathcal{N}(0;\, 1)\Rightarrow
-	\forall_\alpha\in ]0;\, 1[,\, \exists !_{u_\alpha}\in\mathbb{R}^+,\, P(-u_\alpha\leq T\leq
+	\forall \alpha\in ]0;\, 1[,\, \exists ! u_\alpha\in\mathbb{R}^+,\, P(-u_\alpha\leq T\leq
 	u_\alpha) = 1 - \alpha$\\
 	
 	\subsection{Démonstration}
-	Soit $\forall_u\in [0; \, +\infty[,\; F(u) = P(-u\leq T\leq u) = 1-\alpha$.\\
+	Soit $\forall u\in [0; \, +\infty[,\; F(u) = P(-u\leq T\leq u) = 1-\alpha$.\\
 	On a: $F(0)=0$ et $\lim\limits_{u\rightarrow +\infty}F(u)=1$ : l'aire sous la cloche vaut 1.\\
 	Par ailleurs, par symétrie de $\phi$ par rapport à l'axe des ordonnées, on a:\\
 	$F(u) =\, 2\times P(0\leq T\leq u) =\, \int_{0}^{u}\phi (t)\; \mathrm{dt}$\ \  \emph{(avec $\int_{0}^{u}\phi (t)\; \mathrm{dt}$ la primitive de $\phi$ qui s'annule en 0)}.\\
 	Donc $F'(u) = 2\times \phi (u) >0$ et par suite, $F$ est strictement croissante sur $[0; +\infty[$.\\
-	Donc d'après le théorème des valeurs intermédiaires, comme $(1-\alpha)\in ]0;\; 1[,\; \exists !_{u_\alpha}\in\mathbb{R},\, F(u_\alpha) = 1-\alpha$,\\
+	Donc d'après le théorème des valeurs intermédiaires, comme $(1-\alpha)\in ]0;\; 1[,\; \exists ! u_\alpha\in\mathbb{R},\, F(u_\alpha) = 1-\alpha$,\\
 	c'est à dire telle que:
 	\begin{displaymath}
 		P(-u_\alpha\leq T \leq u_\alpha) = 1-\alpha
