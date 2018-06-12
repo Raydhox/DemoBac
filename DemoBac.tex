@@ -1,15 +1,9 @@
 \documentclass[12px]{article}
-
-\usepackage[utf8]{inputenc}
 \usepackage[margin=2.5cm]{geometry}
-%Pour avoir un joli D belle majuscule.
-\usepackage{fourier}
-%
-\usepackage{amsfonts,amsmath,amssymb}
+\input{../module}
 
 %Quelques raccourcis utiles (pour les démos du chapitre Intégration)
 \newcommand\I{$[a\,;b]$ }
-\newcommand\dt{f(t)\;\mathrm{dt}}
 
 \begin{document}
 	\begin{center}
@@ -79,7 +73,7 @@
 	%====================EXPONENTIELLE=====================
 	%====================1ère Démo du chapitre Exp=====================
 	\section{Prérequis (Fonction exponentielle)}
-	Soit $f$ une fonction dérivable sur un intervalle $I$.\\
+	Soit $f$ une fonction dérivable sur un intervalle $I$.
 	Si $\forall x\in I, \,f'(x)=0,$ alors $f$ est constante sur $I$.
 	
 	\section{1ère Démo (Fonction exponentielle)}
@@ -189,13 +183,12 @@
 		
 	On a, d'après la relation de Chasles:\\
 	\begin{displaymath}
-		F( x_0 +h ) - F(x_0) = \int_{a}^{x_0 +h}\dt - \int_{a}^{x_0}\dt = 
-		\int_{a}^{ x_0 +h }\dt + \int_{x_0}^{a}\dt = \int_{x_0}^{x_0 +h}\dt
+		F( x_0 +h ) - F(x_0) = \int_{a}^{x_0 +h}\fdt - \int_{a}^{x_0} \fdt = 
+		\int_{a}^{ x_0 +h }\dt + \int_{x_0}^{a}\fdt = \int_{x_0}^{x_0 +h} \fdt
 	\end{displaymath}
 	\\
 		
-	\emph{
-	Remarque: Comme $f$ est croissante sur \I, le domaine $\mathcal{D}$ est compris entre les rectangles de base $[x_0; x_0 +h]$ et de hauteurs $f(x_0)$ et $f(x_0 +h)$, ce qui va nous permettre d'encadrer $\int_{x_0}^{x_0 +h}\dt$.}\\
+	\emph{Remarque: Comme $f$ est croissante sur \I, le domaine $\mathcal{D}$ est compris entre les rectangles de base $[x_0; x_0 +h]$ et de hauteurs $f(x_0)$ et $f(x_0 +h)$, ce qui va nous permettre d'encadrer $\int_{x_0}^{x_0 +h}\fdt$.}\\
 	
 	Comme f est croissante sur \I, on a l'encadrement:
 	\begin{center}
@@ -203,7 +196,7 @@
 			%Rappel: \leq = <=
 			(x_0 +h -x_0 ) \times f(x_0) 
 				\leq 
-			\int_{x_0}^{x_0 +h}\dt 
+			\int_{x_0}^{x_0 +h}\fdt 
 				\leq 
 			(x_0 +h -x_0) \times f(x_0 +h)
 		\end{displaymath}
@@ -214,7 +207,7 @@
 			%Rappel: \leq = <=
 			h \times f(x_0) 
 			\leq 
-			\int_{x_0}^{x_0 +h}\dt 
+			\int_{x_0}^{x_0 +h}\fdt 
 			\leq 
 			h \times f(x_0 +h)
 		\end{displaymath}
@@ -223,10 +216,10 @@
 	\begin{center}
 		\begin{displaymath}
 			%Rappel: \leq = <=
-			f(x_0) \leq \frac{\int_{x_0}^{x_0 +h}\dt}{h} \leq f(x_0 +h)
+			f(x_0) \leq \frac{\int_{x_0}^{x_0 +h}\fdt}{h} \leq f(x_0 +h)
 		\end{displaymath}
 	\end{center}
-	Soit encore, puisque $F(x_0 +h) - F(x_0) = \int_{x_0}^{x_0 +h}\dt$:
+	Soit encore, puisque $F(x_0 +h) - F(x_0) = \int_{x_0}^{x_0 +h}\fdt$:
 	\begin{center}
 		\begin{displaymath}
 			%Rappel: \leq = <=
@@ -368,6 +361,27 @@
 		&= p-u_\alpha\times\sqrt{ \frac{p(1-p)}{n} }\leq\, F_n\, \leq p+u_\alpha\times\sqrt{ \frac{p(1-p)}{n} }
 	\end{align*}
 	D'où le résultat en passant à la limite.
+	
+	%===================ESPACE=====================
+	%===================Intervalle de fluctuation avec une loi normale====================
+	\section{Théorème du toit}
+	
+	\subsection{\'Enoncé}
+	Soient $d_1$ et $d_2$ deux droites parallèles, $\mathcal{P}_1$ et $\mathcal{P}_2$ deux plans distincts tels que $d_1 \subset \mathcal{P}_1$ et $d_2 \subset \mathcal{P}_2$.\\
+	Si $\mathcal{P}_1$ et $\mathcal{P}_2$ sont sécants, alors leur droite $\Delta$ d'intersection est parallèle à $d_1$ et $d_2$.
+	
+	\subsection{\'Enoncé}
+	Notons $\vec{u}$ un vecteur directeur de $d_1$ et $d_2$ (qui sont parallèles), et $\vec{w}$ un vecteur directeur de $\Delta$.\\
+	Notons $(\vec{u}, \vec{v_1})$ un couple de vecteurs directeurs de $\mathcal{P}_2$.\\\\
+	$\Delta \subset \mathcal{P}_1 \Rightarrow \E (x_1; y_1) \in \R^2, \, \vec{w} = x_1\vec{u} + y_1\vec{v_1}$.\\	
+	$\Delta \subset \mathcal{P}_2 \Rightarrow \E (x_2; y_2) \in \R^2, \, \vec{w} = x_2\vec{u} + y_2\vec{v_2}$.\\
+	
+	On a donc $x_1\vec{u} + y_1\vec{v_1} = x_2\vec{u} + y_2\vec{v_2}$, c'est à dire $(x_1 - x_2)\vec{u} = y_2\vec{v_2} - y_1\vec{v_1}$.\\
+	
+	Si $x_1 \not= x_2$, alors $\vec{u} = \frac{y_2}{x_1 - x_2}\vec{v_1} - \frac{y_2}{x_1 - x_2}\vec{v_2}$ et les vecteurs $\vec{u}$, $\vec{v_1}$ et $\vec{v_2}$ sont donc coplanaires ce qui est impossible car les plans $\mathcal{P}_1$ et $\mathcal{P}_2$ sont sécants.
+	Donc $x_1 = x_2$ et $y_1 = 0$ et $y_2 = 0$ car les vecteurs $\vec{v_1}$ et $\vec{v_2}$ ne sont pas colinéaires.\\
+	Au final, $\vec{w} = x_1\vec{u}$ et $\Delta$ est parallèle à $d_1$ et $d_2.$
+	
 	
 \end{document}
 
