@@ -212,6 +212,7 @@
 			h \times f(x_0 +h)
 		\end{displaymath}
 	\end{center}
+	\newpage
 	D'où, en divisant pas $h>0$:
 	\begin{center}
 		\begin{displaymath}
@@ -305,6 +306,7 @@
 		\forall t\in\mathbb{R},\, \phi (t) = \frac{1}{2\pi}\times e^{ -\frac{t^2}{2} }
 	\end{displaymath}
 	
+	\newpage
 	\subsection{\'Enoncé}
 	$T\rightsquigarrow\mathcal{N}(0;\, 1)\Rightarrow
 	\forall \alpha\in ]0;\, 1[,\, \exists ! u_\alpha\in\mathbb{R}^+,\, P(-u_\alpha\leq T\leq
@@ -324,7 +326,6 @@
 	
 	%===================\'ECHANTILLONAGE=====================
 	%===================Intervalle de fluctuation avec une loi normale====================
-	\newpage
 	\section{Intervalle de fluctuation avec une loi normale}
 	
 	\subsection{\'Enoncé}
@@ -382,6 +383,50 @@
 	Donc $x_1 = x_2$ et $y_1 = 0$ et $y_2 = 0$ car les vecteurs $\vec{v_1}$ et $\vec{v_2}$ ne sont pas colinéaires.\\
 	Au final, $\vec{w} = x_1\vec{u}$ et $\Delta$ est parallèle à $d_1$ et $d_2.$
 	
+	%===================Produit scalaire====================
+	\section{Orthogonalité entre une droite et un plan}
+	
+	\subsection{\'Enoncé}
+	Si une droite $\Delta$ est orthogonale à deux droites sécantes $d_1$ et $d_2$ d'un plan $\mathcal{P}$, alors elle est orthogonal à toutes les droites du plan.
+	
+	\subsection{\'Enoncé}
+	Soit $d$ une droite de $\mathcal{P}$.\\
+	Soient $\vec{v}$ un vecteur directeur de $\Delta$, $\vec{u_1}$ et $\vec{u_2}$ des vecteurs respectifs de $d_1$ et $d_2$ et $\vec{u}$ un vecteur directeur de $d$.
+	
+	Comme les droites $d$, $d_1$ et $d_2$ sont incluses dans $\mathcal{P}$, les vecteurs $\vec{u}$, $\vec{u_1}$ et $\vec{u_2}$ sont coplanaires et\\
+	$\E(a;\, b)\in\R^2,\; \vec{u} = a\vec{u_1} + b\vec{u_2}$.\\
+	On a alors $\vec{v}.\vec{u} = \vec{v}.(a\vec{u_1} + b\vec{u_2})
+	= a(\vec{v}.\vec{u_1}) + b(\vec{v}.\vec{u_2})$.\\
+	Or, $\Delta\perp d_1 \Rightarrow \vec{v}.\vec{u_1} = 0$ et $\Delta\perp d_2 \Rightarrow \vec{v}.\vec{u_2} = 0$.\\
+	Donc $\vec{v_1}.\vec{u} = 0$ et $\Delta\perp d$.
+	
+	%===================SPE (PGCD))=====================
+	%===================Théorème de Gauss====================
+	\section{Théorème de Gauss (Spé)}
+	
+	\subsection{\'Enoncé}
+	$\A(a;\, b;\, c)\in\R^3, (a|bc\wedge PGCD(a;\, b)=1)\Rightarrow a|c$.
+	
+	\subsection{Démonstration}
+	$a|bc \Rightarrow bc=ka,\; k\in\Z^*$\\
+	$a$ et $b$ sont premiers entre eux, donc d'après le théorème de Bézout, $\E(u;\, v)\in\Z^2,\; au+bv=1$.\\
+	Donc $cau+cbv=c$.\\
+	Or, $bc=ka$, donc $cau+kav=c \Leftrightarrow a(cu+kv)=c$.\\
+	$cu+kv\in\Z$, donc $a|c$.
+	
+	%===================Corollaire de Gauss====================
+	\section{Corollaire de Gauss (Spé)}
+	
+	\subsection{\'Enoncé}
+	$\A(a;\, b;\, c)\in\R^3, (a|b\wedge b|c\wedge PGCD(a;\, b)=1)\Rightarrow ab|c$.
+	
+	\subsection{Démonstration}
+	$a|c \Rightarrow c=ka,\; k\in\Z$\\
+	$b|c \Rightarrow c=k'b,\; k'\in\Z$\\
+	$a$ et $b$ sont premiers entre eux, donc d'après le théorème de Bézout, $\E(u;\, v)\in\Z^2,\; au+bv=1$.\\
+	Donc $cau+cbv=c$.\\
+	Or, $c=ka$ et $c=k'b$, donc $k'bau+kabv=c \Leftrightarrow ab(k'u+kv)=c$.\\
+	$k'u+kv\in\Z$, donc $ab|c$.
 	
 \end{document}
 
